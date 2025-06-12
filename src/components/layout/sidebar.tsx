@@ -3,7 +3,7 @@ import { Button } from "../../components/ui/button";
 import { api } from "~/utils/api";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Task } from "@prisma/client";
+import type { Task } from "@prisma/client";
 import { signOut, useSession } from "next-auth/react";
 
 interface SidebarProps {
@@ -148,8 +148,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </div>
               <div className="ml-3 flex-1">
                 <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                  {sessionData?.user?.name ||
-                    sessionData?.user?.email ||
+                  {sessionData?.user?.name ??
+                    sessionData?.user?.email ??
                     "User"}
                 </p>
                 <p

@@ -1,17 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckSquare, Clock, AlertTriangle, TrendingUp } from "lucide-react";
+import { CheckSquare, Clock, AlertTriangle } from "lucide-react";
 import { api } from "~/utils/api";
-import { Task } from "@prisma/client";
+import type { Task } from "@prisma/client";
 
 export default function StatsCards() {
-  type Stats = {
-    totalTasks: number;
-    completedTasks: number;
-    inProgressTasks: number;
-    overdueTasks: number;
-  };
-
   const { data: tasks = [], isLoading } = api.post.getAllTask.useQuery();
   const inProgressTasks = tasks.filter(
     (task: Task) => task.status === "IN_PROGRESS",

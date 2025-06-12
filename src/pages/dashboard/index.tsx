@@ -31,7 +31,6 @@ export default function Dashboard() {
 
             {/* Right Sidebar */}
             <div className="space-y-8">
-              {/* <Timeline /> */}
               <TeamMembers />
               <QuickActions />
             </div>

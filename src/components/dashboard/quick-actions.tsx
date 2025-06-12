@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
-import { Plus, Folder, BarChart3 } from "lucide-react";
+import { Plus } from "lucide-react";
 import TaskModal from "../../components/tasks/task-modal";
 
 export default function QuickActions() {

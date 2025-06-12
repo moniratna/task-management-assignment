@@ -1,4 +1,3 @@
-import { useUsers } from "../../hooks/use-users";
 import {
   Card,
   CardContent,
@@ -11,9 +10,8 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "../../components/ui/avatar";
-import { Plus } from "lucide-react";
 import { api } from "~/utils/api";
-import { User } from "@prisma/client";
+import type { User } from "@prisma/client";
 
 export default function TeamMembers() {
   const { data = [], isLoading } = api.post.getAllUsers.useQuery();
